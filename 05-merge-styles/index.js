@@ -14,8 +14,8 @@ async function bundle(){
     if(file.isFile() && fileExtantion === '.css'){
       const fileContent = await fs.readFile(pathToCurrentFile, 'utf8');
       styleArr.push(`${fileContent}\n`);
-    };
-  };
+    }
+  }
   await fs.writeFile(path.join(__dirname, 'project-dist/bundle.css'), styleArr.join(''));
 }
 
