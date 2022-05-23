@@ -31,9 +31,10 @@ async function assembleStylesFiles(){
 }
 
 async function copyFolder(currentDir, destinationDir){
-  await fs.rm(destinationDir, {recursive: true});
-  await fs.mkdir(destinationDir, {recursive: true});
   const files = await fs.readdir(currentDir, { withFileTypes: true });
+
+  await fs.rm(destinationDir, {recursive: true});
+  await fs.mkdir(destinationDir, {recursive: true});  
   
   files.forEach(async (file) => {
     const currentFilePath = path.join(currentDir, file.name);
