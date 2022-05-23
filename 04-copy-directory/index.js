@@ -6,8 +6,8 @@ async function makeDirCopy(){
   const pathToFilesCopy = path.join(__dirname, 'files-copy');
 
   await fs.mkdir(pathToFilesCopy, {recursive: true});
-  const coppiedfiles = await fs.readdir(pathToFilesCopy);
 
+  const coppiedfiles = await fs.readdir(pathToFilesCopy);
   coppiedfiles.forEach(async (file) => {
     await fs.unlink(path.join(pathToFilesCopy, file));
   });
