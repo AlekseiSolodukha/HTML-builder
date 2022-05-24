@@ -9,7 +9,6 @@ const pathToResultFiles = path.join(__dirname, 'project-dist');
 const pathToResultAssets = path.join(pathToResultFiles, 'assets');
 const pathToResultHTML = path.join(pathToResultFiles, 'index.html');
 
-
 async function creatResultFolder(){
   await fs.mkdir(pathToResultFiles, {recursive: true}); 
 }
@@ -33,7 +32,6 @@ async function assembleStylesFiles(){
 async function copyFolder(currentDir, destinationDir){
   const files = await fs.readdir(currentDir, { withFileTypes: true });
 
-  await fs.rm(destinationDir, {recursive: true});
   await fs.mkdir(destinationDir, {recursive: true});  
   
   files.forEach(async (file) => {
